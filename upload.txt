@@ -1,2 +1,0 @@
-put logs/* D:\log.txt
-bye
