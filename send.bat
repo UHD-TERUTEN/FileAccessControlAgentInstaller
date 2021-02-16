@@ -4,7 +4,7 @@ set ssh_account=%%F
 )
 set id_rsa_location=%HOMEDRIVE%%HOMEPATH%\.ssh\id_rsa
 echo start update
-echo upload log file
+echo uploading log files
 echo.
 echo ssh connects to %ssh_account%...
 ssh -i %id_rsa_location% %ssh_account% "mkdir logs"
@@ -18,5 +18,5 @@ echo.
 echo sftp connects to %ssh_account%...
 sftp -b upload.txt -i %id_rsa_location% %ssh_account%
 echo.
-echo upload log file done!
+echo uploading log files has done!
 echo finish
