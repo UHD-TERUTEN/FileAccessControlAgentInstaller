@@ -3,13 +3,13 @@ for /F "tokens=* USEBACKQ" %%F in (account.txt) do (
 set ssh_account=%%F
 )
 set id_rsa_location=%HOMEDRIVE%%HOMEPATH%\.ssh\id_rsa
-set REJECT_LOGS=%LOCALAPPDATA%\FileAccessControlAgent\reject_logs\*
+set REJECT_LOGS=%LOCALAPPDATA%\FileAccessControlAgent\RejectLogs\*
 echo start update
 echo uploading reject log files
 echo.
 echo ssh connects to %ssh_account%...
 ssh -i %id_rsa_location% %ssh_account% "mkdir logs"
-ssh -i %id_rsa_location% %ssh_account% "mkdir logs/reject_logs"
+ssh -i %id_rsa_location% %ssh_account% "mkdir logs/RejectLogs"
 echo.
 del upload_reject.txt
 type nul > upload_reject.txt
