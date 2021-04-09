@@ -7,8 +7,8 @@ setx FileAccessControlAgentRoot "%LOCALAPPDATA%\FileAccessControlAgent"
 echo 2. Copy Files to %FileAccessControlAgentRoot%...
 mkdir "%FileAccessControlAgentRoot%\RejectLogs"
 mkdir "%FileAccessControlAgentRoot%\Whitelists"
-set SOURCE=%~dp0%*
-copy "%SOURCE%" "%FileAccessControlAgentRoot%"
+set SOURCE=%~dp0%.
+xcopy "%SOURCE%" "%FileAccessControlAgentRoot%" /E
 echo 3. Register FileAccessMonitor to taskschd...
 schtasks /create /tn "File Access Monitor" /sc "ONLOGON" /rl HIGHEST /tr "%FileAccessControlAgentRoot%\FileAccessMonitor.exe"
 echo 4. Register send.bat to taskschd...
