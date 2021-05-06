@@ -3,7 +3,7 @@ echo 1. Copy DetoursReject.dll to %WINDIR%\System32...
 set SOURCE_PATH=%~dp0%DetoursReject.dll
 set TARGET_PATH=%WINDIR%\System32\DetoursReject.dll
 copy "%SOURCE_PATH%" "%TARGET_PATH%"
-setx FileAccessControlAgentRoot "%LOCALAPPDATA%\FileAccessControlAgent"
+setx /M FileAccessControlAgentRoot "%LOCALAPPDATA%\FileAccessControlAgent"
 echo 2. Copy Files to %FileAccessControlAgentRoot%...
 mkdir "%FileAccessControlAgentRoot%\RejectLogs"
 mkdir "%FileAccessControlAgentRoot%\Whitelists"
