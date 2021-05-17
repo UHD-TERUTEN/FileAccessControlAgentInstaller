@@ -16,9 +16,9 @@ tar -zcvf "%FileAccessControlAgentRoot%\EventLogs\%DATE%\%DATE%.tar.gz" -C %File
 echo.
 echo uploading zip file
 echo ssh connects to %ssh_account%...
-ssh -i %id_rsa_location% %ssh_account% "mkdir logs & mkdir logs\RejectLogs & mkdir logs\EventLogs"
-scp -i %id_rsa_location% "%FileAccessControlAgentRoot%\RejectLogs\%DATE%\%DATE%.tar.gz" "%ssh_account%:logs/RejectLogs"
-scp -i %id_rsa_location% "%FileAccessControlAgentRoot%\EventLogs\%DATE%\%DATE%.tar.gz" "%ssh_account%:logs/EventLogs"
+ssh -i %id_rsa_location% %ssh_account% "mkdir Logs & mkdir Logs\RejectLogs & mkdir Logs\EventLogs"
+scp -i %id_rsa_location% "%FileAccessControlAgentRoot%\RejectLogs\%DATE%\%DATE%.tar.gz" "%ssh_account%:Logs/RejectLogs"
+scp -i %id_rsa_location% "%FileAccessControlAgentRoot%\EventLogs\%DATE%\%DATE%.tar.gz" "%ssh_account%:Logs/EventLogs"
 rmdir /s /q "%FileAccessControlAgentRoot%\RejectLogs\%DATE%"
 rmdir /s /q "%FileAccessControlAgentRoot%\EventLogs\%DATE%"
 echo.
