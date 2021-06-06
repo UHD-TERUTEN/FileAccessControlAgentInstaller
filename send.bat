@@ -17,7 +17,7 @@ echo.
 echo log files have been uploaded!
 echo finish
 
-sqlite3 db.sqlite < "insert into Whitelist values(%filename%,null)"
-sqlite3 db.sqlite < update_system_logs.txt
-sqlite3 db.sqlite < update_file_access_reject_logs.txt
-sqlite3 db.sqlite < update_inquiry.txt
+@REM sqlite3 db.sqlite < "insert into Whitelist values(%filename%,null)"
+@REM sqlite3 db.sqlite < update_system_logs.txt
+@REM sqlite3 db.sqlite < update_file_access_reject_logs.txt
+@REM sqlite3 db.sqlite < update_inquiry.txt
